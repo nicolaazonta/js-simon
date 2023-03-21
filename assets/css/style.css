@@ -1,0 +1,13 @@
+.number_square{
+    width: 5rem;
+    aspect-ratio: 1;
+    background-color: blueviolet;
+    border: 2px dashed white;
+    border-radius: 1rem;
+    color: white;
+    font-size: 4rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
