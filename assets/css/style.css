@@ -9,5 +9,7 @@
     font-weight: 800;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+.number_square > span{
+    line-height: 4.3rem;
 }

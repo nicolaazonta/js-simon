@@ -9,9 +9,32 @@ for (let i = 0; i < 5; i++) {
 
     const numberEl = document.querySelector('.container')
 
-    const numberSquare = `<div class="number_square"><span>${randomNumbersPc[i]}</span></div>`
+    const numberSquare = `<div  class="number_square"><span>${randomNumbersPc[i]}</span></div>`
 
     numberEl.insertAdjacentHTML('beforeend', numberSquare)
 
 }
 console.log(randomNumbersPc);
+
+setTimeout(function eraseAll(){//erase all numbers after 2 seconds
+  
+
+    //selezionare ogni singolo span
+    const allNumbers = document.querySelectorAll('span');
+
+    //inserire un testo vuoto ''
+    for (let i = 0; i < allNumbers.length; i++) {
+        const thisNumber = allNumbers[i];
+
+        thisNumber.innerHTML('');        
+    } 
+
+} , 2000)
+
+/* function eraseAll(){
+    const allSpans = document.querySelectorAll('span');
+
+    const eraseEl = '';
+
+    allSpans.insertAdjacentHTML('beforeend' , eraseEl);
+} */
