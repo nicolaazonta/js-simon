@@ -16,8 +16,7 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(randomNumbersPc);
 
-setTimeout(function eraseAll(){//erase all numbers after 2 seconds
-  
+setTimeout(function(){//erase all numbers after 2 seconds  
 
     //selezionare ogni singolo span
     const allNumbers = document.querySelectorAll('span');
