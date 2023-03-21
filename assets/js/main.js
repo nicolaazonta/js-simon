@@ -14,7 +14,6 @@ for (let i = 0; i < 5; i++) {
     numberEl.insertAdjacentHTML('beforeend', numberSquare)
 
 }
-console.log(randomNumbersPc);
 
 setTimeout(function(){//erase all numbers after 2 seconds  
 
@@ -25,15 +24,41 @@ setTimeout(function(){//erase all numbers after 2 seconds
     for (let i = 0; i < allNumbers.length; i++) {
         const thisNumber = allNumbers[i];
 
-        thisNumber.innerHTML('');        
+        thisNumber.innerHTML= '';        
     } 
 
-} , 2000)
+}, 2000); 
 
-/* function eraseAll(){
-    const allSpans = document.querySelectorAll('span');
 
-    const eraseEl = '';
 
-    allSpans.insertAdjacentHTML('beforeend' , eraseEl);
-} */
+setTimeout(function(){
+
+    let userNumbers = [];
+    for (let i = 0; i < 5; i++) {
+        userNumbers.push(Number(prompt(`enter the number that was in cell number ${i+1}`)));
+        
+    }   
+
+    console.log(randomNumbersPc + 'pc numbers');
+
+    console.log(userNumbers + 'user numbers');
+
+    let k = 0;
+    for (let i = 0; i < 5; i++) {
+
+        if (randomNumbersPc[i] === userNumbers[i]) {
+            k++;
+            
+        }
+    }
+    console.log(k);
+
+    document.querySelector('h1').innerHTML = `YOU HAVE GUESSED ${k} OF 5 NUMBERS`;
+
+}, 2500); 
+
+    
+
+
+
+    
