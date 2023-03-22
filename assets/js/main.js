@@ -15,10 +15,9 @@ for (let i = 0; i < 5; i++) {
 
 }
 
-setTimeout(eraseNumbers,2000)
+setTimeout(eraseNumbers,5000)
 
-
-
+setTimeout(enterNumbers,5100)
 
 function eraseNumbers () {//function that erase all numbers 
 
@@ -30,18 +29,13 @@ function eraseNumbers () {//function that erase all numbers
         const thisNumber = allNumbers[i];
 
         thisNumber.innerHTML= '';        
-    } ;
-
-    
-    enterNumbers();//call enter numbers function
+    } ;    
 }; 
-
 
 function enterNumbers (){//the user enter numbers trough the prompt
     let userNumbers = [];
     for (let i = 0; i < 5; i++) {
-        userNumbers.push(Number(prompt(`enter the number that was in cell number ${i+1}`)));
-        
+        userNumbers.push(Number(prompt(`enter the number that was in cell number ${i+1}`)));  
     }   
 
     console.log(randomNumbersPc + 'pc numbers');
