@@ -5,7 +5,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 let randomNumbersPc = [];
 for (let i = 0; i < 5; i++) {
 
-    randomNumbersPc.push(Math.floor(Math.random() * 6))
+    randomNumbersPc.push(Math.floor(Math.random() * 100))
 
     const numberEl = document.querySelector('.container')
 
@@ -15,7 +15,12 @@ for (let i = 0; i < 5; i++) {
 
 }
 
-setTimeout(function(){//erase all numbers after 2 seconds  
+setTimeout(eraseNumbers,2000)
+
+
+
+
+function eraseNumbers () {//function that erase all numbers 
 
     //selezionare ogni singolo span
     const allNumbers = document.querySelectorAll('span');
@@ -25,13 +30,38 @@ setTimeout(function(){//erase all numbers after 2 seconds
         const thisNumber = allNumbers[i];
 
         thisNumber.innerHTML= '';        
-    } 
+    } ;
 
-}, 2000); 
+    
+    enterNumbers();//call enter numbers function
+}; 
 
 
+function enterNumbers (){//the user enter numbers trough the prompt
+    let userNumbers = [];
+    for (let i = 0; i < 5; i++) {
+        userNumbers.push(Number(prompt(`enter the number that was in cell number ${i+1}`)));
+        
+    }   
 
-setTimeout(function(){
+    console.log(randomNumbersPc + 'pc numbers');
+
+    console.log(userNumbers + 'user numbers');
+
+    let k = 0;
+    for (let i = 0; i < 5; i++) {
+
+        if (randomNumbersPc[i] === userNumbers[i]) {
+            k++;            
+        }
+    }
+    console.log(k);
+
+    document.querySelector('h1').innerHTML = `YOU HAVE GUESSED ${k} OF 5 NUMBERS`;
+};
+
+
+/* setTimeout(function(){
 
     let userNumbers = [];
     for (let i = 0; i < 5; i++) {
@@ -56,7 +86,7 @@ setTimeout(function(){
     document.querySelector('h1').innerHTML = `YOU HAVE GUESSED ${k} OF 5 NUMBERS`;
 
 }, 2500); 
-
+ */
     
 
 
